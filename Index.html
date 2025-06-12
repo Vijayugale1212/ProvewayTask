@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            padding: 20px;
+            
+        }
+        .product-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            position: relative;
+            width: 25vw;
+            left: 35vw;
+           
+        }
+        .product-box.selected {
+            border-color: #ff5c8a;
+            box-shadow: 0 0 10px #ffccd5;
+        }
+        .discount {
+            color: #fff;
+            background-color: #ff5c8a;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .most-popular {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ffc107;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 0 8px 0 8px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 48vw;
+            margin-top: -16px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .variant-select {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        select {
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .add-to-cart {
+            background-color: #ff5c8a;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 20vw;
+            margin-left: 38vw;
+        }
+        .free-delivery {
+            color: #ff5c8a;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 37vw;
+        }
+        .variant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+  .variant-select {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    align-items: center;
+  }
+
+  .variant-item {
+    flex: 0 0 calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .product-box:hover .variant-select {
+    display: flex;
+  }
+    </style>
+</head>
+<body>
+
+<div class="product-box " onclick="selectBox(this)">
+    <label>
+        <input type="radio" name="unit" value="1">
+        1 Unit <span class="discount">10% Off</span>
+    </label>
+    <div class="">$10.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="variant-select variant-grid">
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="product-box selected" onclick="selectBox(this)">
+    <div class="most-popular">MOST POPULAR</div>
+    <label>
+        <input type="radio" name="unit" value="2" checked>
+        2 Unit <span class="discount">20% Off</span>
+    </label>
+    <div class="">$18.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="variant-select variant-grid">
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="product-box" onclick="selectBox(this)">
+    <label>
+        <input type="radio" name="unit" value="3">
+        3 Unit <span class="discount">30% Off</span>
+    </label>
+    <div class="">$24.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="variant-select variant-grid">
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+        <div class="variant-item">
+            Size:
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+            </select>
+        </div>
+        <div>
+            Colour:
+            <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+            </select>
+        </div>
+        
+    </div>
+</div>
+    <div class="free-delivery">Free Delivery</div>
+</div>
+
+<div class="price">Total: $18.00 USD</div>
+<button class="add-to-cart">+ Add to Cart</button>
+
+<script>
+    function selectBox(element) {
+        const boxes = document.querySelectorAll('.product-box');
+        boxes.forEach(box => box.classList.remove('selected'));
+        element.classList.add('selected');
+        element.querySelector('input[type=radio]').checked = true;
+    }
+</script>
+<script>
+    
+    document.querySelectorAll('.product-box').forEach(box => {
+      const variants = box.querySelector('.variant-select');
+  
+      box.addEventListener('mouseenter', () => {
+        variants.style.display = 'flex'; 
+      });
+  
+      box.addEventListener('mouseleave', () => {
+        variants.style.display = 'none'; 
+      });
+    });
+  </script>
+</body>
+</html>
